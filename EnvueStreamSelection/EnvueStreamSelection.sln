@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvueStreamSelection", "EnvueStreamSelection\EnvueStreamSelection.csproj", "{D3F228F3-DDB0-4D0A-B644-28252CC26A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvueStreamSelection.Tests", "EnvueStreamSelection.Tests\EnvueStreamSelection.Tests.csproj", "{0641D51F-861F-4AAD-9979-D871C90C59CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3F228F3-DDB0-4D0A-B644-28252CC26A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F228F3-DDB0-4D0A-B644-28252CC26A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F228F3-DDB0-4D0A-B644-28252CC26A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F228F3-DDB0-4D0A-B644-28252CC26A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0641D51F-861F-4AAD-9979-D871C90C59CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0641D51F-861F-4AAD-9979-D871C90C59CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0641D51F-861F-4AAD-9979-D871C90C59CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0641D51F-861F-4AAD-9979-D871C90C59CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
