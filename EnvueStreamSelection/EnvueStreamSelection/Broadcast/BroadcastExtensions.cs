@@ -16,7 +16,7 @@ namespace EnvueStreamSelection
             if (weightSum == 0 || !weightedPolarities.TryGetValue(RatingPolarity.Positive, out var positiveWeight) || positiveWeight == 0)
                 return 0;
 
-            return (double) weightSum / positiveWeight;
+            return (double) positiveWeight / weightSum;
         }
     }
 }

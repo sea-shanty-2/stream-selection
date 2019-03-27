@@ -50,8 +50,8 @@ namespace EnvueStreamSelection.Tests
             var broadcast = new MockBroadcast(positiveRating, negativeRating);
             var score = broadcast.GetScore();
 
-
-            var expected = positiveWeight > 0 ? (positiveWeight + negativeWeight) / (double) positiveWeight : 0D;
+            var weightSum = positiveWeight + negativeWeight;
+            var expected =  weightSum > 0 ? (double) positiveWeight / weightSum : 0D;
             
             Assert.AreEqual(expected, score, Delta);
         }
