@@ -5,18 +5,20 @@ namespace EnvueStreamSelection
 {
     public class EpsilonGreedySelector : IBroadcastSelector
     {
-        private readonly IEpsilonSelector _epsilonSelector;
+        private readonly IEpsilonComputer _epsilonComputer;
         private readonly IBroadcastSelector _explorationSelector;
-        
-        public EpsilonGreedySelector(IEpsilonSelector epsilonSelector, IBroadcastSelector explorationSelector)
+        private readonly IBroadcastSelector _exploitationSelector;
+
+        public EpsilonGreedySelector(IEpsilonComputer epsilonComputer, IBroadcastSelector explorationSelector, IBroadcastSelector exploitationSelector)
         {
-            _epsilonSelector = epsilonSelector;
+            _epsilonComputer = epsilonComputer;
             _explorationSelector = explorationSelector;
+            _exploitationSelector = exploitationSelector;
         }
         
         public IBroadcast SelectFrom(ICollection<IBroadcast> broadcasts)
         {
-            var epsilon = _epsilonSelector.SelectFrom(broadcasts);
+            var epsilon = _epsilonComputer.ComputeFrom(broadcasts);
             var rand = new Random().NextDouble();
 
             return rand < epsilon ? Explore(broadcasts) : Exploit(broadcasts);
@@ -33,7 +35,7 @@ namespace EnvueStreamSelection
         {
             Console.WriteLine("exploit");
             
-            return null;
+            return _exploitationSelector.SelectFrom(broadcasts);
         }
     }
 }

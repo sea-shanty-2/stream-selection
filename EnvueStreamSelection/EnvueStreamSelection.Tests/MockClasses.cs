@@ -12,11 +12,13 @@ namespace EnvueStreamSelection.Tests
         {
             _ratings = Enumerable.Range(0, numberOfRatings).Select(_ => new MockRating()).ToList<IBroadcastRating>();
         }
-        
-        public string GetIdentifier()
+
+        public MockBroadcast(params IBroadcast[] ratings)
         {
-            throw new System.NotImplementedException();
+            _ratings = ratings as ICollection<IBroadcastRating>;
         }
+        
+        public string GetIdentifier() => throw new System.NotImplementedException();
 
         public ICollection<IBroadcastRating> GetRatings() => _ratings;
     }
@@ -24,6 +26,7 @@ namespace EnvueStreamSelection.Tests
     internal class MockRating : IBroadcastRating
     {
         private readonly RatingPolarity _polarity;
+        private readonly int _weight;
         
         public MockRating()
         {
@@ -35,8 +38,14 @@ namespace EnvueStreamSelection.Tests
             _polarity = polarity;
         }
 
-        public int GetWeight() => 1;
+        public MockRating(RatingPolarity polarity, int weight)
+        {
+            _polarity = polarity;
+            _weight = weight;
+        }
 
-        public RatingPolarity GetPolarity() => throw new System.NotImplementedException();
+        public int GetWeight() => _weight;
+
+        public RatingPolarity GetPolarity() => _polarity;
     }
 }

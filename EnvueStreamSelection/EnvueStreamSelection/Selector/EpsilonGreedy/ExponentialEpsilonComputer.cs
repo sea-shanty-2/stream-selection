@@ -5,18 +5,18 @@ using System.Linq;
 namespace EnvueStreamSelection
 {
     /* Epsilon selector with exponential decay */
-    public class ExponentialEpsilonSelector : IEpsilonSelector
+    public class ExponentialEpsilonComputer : IEpsilonComputer
     {
         private readonly double _baseEpsilon;
         private readonly double _decayFactor;
 
-        public ExponentialEpsilonSelector(double decayFactor = 0.05D, double baseEpsilon = 0.1D)
+        public ExponentialEpsilonComputer(double decayFactor = 0.05D, double baseEpsilon = 0.1D)
         {
             _decayFactor = decayFactor;
             _baseEpsilon = baseEpsilon;
         }
         
-        public float SelectFrom(ICollection<IBroadcast> broadcasts)
+        public float ComputeFrom(ICollection<IBroadcast> broadcasts)
         {
             var numberOfImpressions = broadcasts.Sum(b => b.GetRatings().Count());
 

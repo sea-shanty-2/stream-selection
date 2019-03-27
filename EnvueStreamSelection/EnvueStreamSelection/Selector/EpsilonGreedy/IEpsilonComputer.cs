@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace EnvueStreamSelection
 {
-    public interface IEpsilonSelector
+    public interface IEpsilonComputer
     {
-        float SelectFrom(ICollection<IBroadcast> broadcasts);
+        float ComputeFrom(ICollection<IBroadcast> broadcasts);
     }
 }
