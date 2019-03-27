@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using EnvueStreamSelection;
 using NUnit.Framework;
 
-namespace Tests
+namespace EnvueStreamSelection.Tests
 {
     public class EpsilonSelectorTests
     {

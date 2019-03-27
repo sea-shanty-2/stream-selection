@@ -3,13 +3,15 @@ using System.Collections.Generic;
 
 namespace EnvueStreamSelection
 {
-    public class EpsilonGreedy : IStreamSelector
+    public class EpsilonGreedySelector : IBroadcastSelector
     {
         private readonly IEpsilonSelector _epsilonSelector;
-
-        public EpsilonGreedy(IEpsilonSelector epsilonSelector)
+        private readonly IBroadcastSelector _explorationSelector;
+        
+        public EpsilonGreedySelector(IEpsilonSelector epsilonSelector, IBroadcastSelector explorationSelector)
         {
             _epsilonSelector = epsilonSelector;
+            _explorationSelector = explorationSelector;
         }
         
         public IBroadcast SelectFrom(ICollection<IBroadcast> broadcasts)
@@ -23,8 +25,8 @@ namespace EnvueStreamSelection
         private IBroadcast Explore(ICollection<IBroadcast> broadcasts)
         {
             Console.WriteLine("explore");
-            
-            return null;
+
+            return _explorationSelector.SelectFrom(broadcasts);
         }
 
         private IBroadcast Exploit(ICollection<IBroadcast> broadcasts)
