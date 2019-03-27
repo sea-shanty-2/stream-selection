@@ -5,6 +5,6 @@ namespace EnvueStreamSelection
     public interface IBroadcast
     {
         string GetIdentifier();
-        IEnumerable<IRating> GetRatings();
+        ICollection<IRating> GetRatings();
     }
 }

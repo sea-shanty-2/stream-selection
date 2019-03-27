@@ -4,6 +4,6 @@ namespace EnvueStreamSelection
 {
     public interface IStreamSelector
     {
-        IBroadcast SelectFrom(IEnumerable<IBroadcast> broadcasts);
+        IBroadcast SelectFrom(ICollection<IBroadcast> broadcasts);
     }
 }

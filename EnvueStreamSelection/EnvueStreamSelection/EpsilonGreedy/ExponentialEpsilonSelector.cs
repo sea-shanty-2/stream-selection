@@ -16,7 +16,7 @@ namespace EnvueStreamSelection
             _baseEpsilon = baseEpsilon;
         }
         
-        public float SelectFrom(IEnumerable<IBroadcast> broadcasts)
+        public float SelectFrom(ICollection<IBroadcast> broadcasts)
         {
             var numberOfImpressions = broadcasts.Sum(b => b.GetRatings().Count());
 

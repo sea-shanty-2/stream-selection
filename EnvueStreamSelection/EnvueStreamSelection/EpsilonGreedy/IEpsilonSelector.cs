@@ -5,6 +5,6 @@ namespace EnvueStreamSelection
 {
     public interface IEpsilonSelector
     {
-        float SelectFrom(IEnumerable<IBroadcast> broadcasts);
+        float SelectFrom(ICollection<IBroadcast> broadcasts);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace EnvueStreamSelection
@@ -8,14 +9,29 @@ namespace EnvueStreamSelection
 
         public EpsilonGreedy(IEpsilonSelector epsilonSelector)
         {
-            this._epsilonSelector = epsilonSelector;
+            _epsilonSelector = epsilonSelector;
         }
         
-        public IBroadcast SelectFrom(IEnumerable<IBroadcast> broadcasts)
+        public IBroadcast SelectFrom(ICollection<IBroadcast> broadcasts)
         {
-            var epsilon = this._epsilonSelector.SelectFrom(broadcasts);
+            var epsilon = _epsilonSelector.SelectFrom(broadcasts);
+            var rand = new Random().NextDouble();
+
+            return rand < epsilon ? Explore(broadcasts) : Exploit(broadcasts);
+        }
+
+        private IBroadcast Explore(ICollection<IBroadcast> broadcasts)
+        {
+            Console.WriteLine("explore");
             
-            throw new System.NotImplementedException();
+            return null;
+        }
+
+        private IBroadcast Exploit(ICollection<IBroadcast> broadcasts)
+        {
+            Console.WriteLine("exploit");
+            
+            return null;
         }
     }
 }
