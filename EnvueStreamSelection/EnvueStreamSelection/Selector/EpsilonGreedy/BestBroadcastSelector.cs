@@ -9,8 +9,9 @@ namespace EnvueStreamSelection
         {
             if (!broadcasts.Any())
                 throw new NoBroadcastsException();
-            
-            throw new System.NotImplementedException();
+
+            // Sort broadcasts by score and select the best one
+            return broadcasts.OrderByDescending(b => b.GetScore()).First();
         }
     }
 }

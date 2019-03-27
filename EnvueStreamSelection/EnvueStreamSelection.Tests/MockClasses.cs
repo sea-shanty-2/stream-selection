@@ -13,9 +13,9 @@ namespace EnvueStreamSelection.Tests
             _ratings = Enumerable.Range(0, numberOfRatings).Select(_ => new MockRating()).ToList<IBroadcastRating>();
         }
 
-        public MockBroadcast(params IBroadcast[] ratings)
+        public MockBroadcast(params IBroadcastRating[] ratings)
         {
-            _ratings = ratings as ICollection<IBroadcastRating>;
+            _ratings = ratings;
         }
         
         public string GetIdentifier() => throw new System.NotImplementedException();

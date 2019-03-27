@@ -6,8 +6,4 @@
     <RootNamespace>stream_selection</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Selector" />
-  </ItemGroup>
-
 </Project>
