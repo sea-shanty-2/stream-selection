@@ -6,11 +6,6 @@ namespace EnvueStreamSelection.Tests
 {
     public class BestBroadcastSelectorTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void TestNoBroadcasts()
         {

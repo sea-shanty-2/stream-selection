@@ -6,11 +6,6 @@ namespace EnvueStreamSelection.Tests
     public class BroadcastExtensionTests
     {
         private const double Delta = 0.01D;
-            
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
         public void TestGetWeightedPolaritiesNoRatings()

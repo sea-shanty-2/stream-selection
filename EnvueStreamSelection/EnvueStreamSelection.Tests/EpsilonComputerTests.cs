@@ -7,11 +7,6 @@ namespace EnvueStreamSelection.Tests
     public class EpsilonComputerTests
     {
         private const double Delta = 0.01;
-            
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
         public void TestNoImpressions()
