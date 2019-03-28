@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 namespace EnvueStreamSelection.Tests
 {
+    [TestFixture]
     public class BroadcastCollectionExtensionTests
     {
         [Test]

@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace EnvueStreamSelection.Tests
 {
+    [TestFixture]
     public class EpsilonComputerTests
     {
         private readonly double Delta = 0.01D;

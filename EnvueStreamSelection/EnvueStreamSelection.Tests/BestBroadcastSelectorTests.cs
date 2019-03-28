@@ -7,6 +7,7 @@ using NUnit.Framework;
 
 namespace EnvueStreamSelection.Tests
 {
+    [TestFixture]
     public class BestBroadcastSelectorTests
     {
         [Test]
@@ -14,7 +15,7 @@ namespace EnvueStreamSelection.Tests
         {
             var selector = new BestBroadcastSelector();
             Assert.Throws<NoBroadcastsException>(
-                delegate { selector.SelectFrom(Enumerable.Empty<IBroadcast>().ToList<IBroadcast>()); });
+                delegate { selector.SelectFrom(Enumerable.Empty<IBroadcast>().ToList()); });
         }
 
         [Test]

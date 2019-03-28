@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace EnvueStreamSelection.Tests
 {
+    [TestFixture]
     public class BroadcastExtensionTests
     {
         private const double Delta = 0.01D;
