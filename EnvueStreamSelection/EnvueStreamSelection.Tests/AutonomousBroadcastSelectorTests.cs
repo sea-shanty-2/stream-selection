@@ -14,7 +14,7 @@ namespace EnvueStreamSelection.Tests
         public void TestSingleBroadcastSelected()
         {
             var broadcast = new MockBroadcast { Bitrate = 0, Stability = 0};
-            var selection = new AutonomousSelector().SelectFrom(new List<IBroadcast> {broadcast});
+            var selection = new AutonomousBroadcastSelector().SelectFrom(new List<IBroadcast> {broadcast});
 
             Assert.IsNotNull(selection);
         }
@@ -22,7 +22,7 @@ namespace EnvueStreamSelection.Tests
         [Test]
         public void TestNoBroadcasts()
         {
-            var selector = new AutonomousSelector();
+            var selector = new AutonomousBroadcastSelector();
             Assert.Throws<NoBroadcastsException>(
                 delegate { selector.SelectFrom(Enumerable.Empty<IBroadcast>().ToList()); });
         }
