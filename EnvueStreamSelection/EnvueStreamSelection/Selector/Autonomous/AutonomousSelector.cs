@@ -24,17 +24,10 @@ namespace EnvueStreamSelection.Selector.Autonomous
                 throw new NoBroadcastsException();
 
             var weightedBroadcasts = GetWeightedBroadcasts(broadcasts);
-            var weightSum = weightedBroadcasts.Sum(w => w.Weight);
-            var random = new Random().Next(weightSum);
-
-            foreach (var weightedBroadcast in weightedBroadcasts)
-            {
-                if (random < weightedBroadcast.Weight)
-                    return weightedBroadcast.Broadcast;
-            }
-
-            // If this point is reached, no broadcast was selected
-            throw new InvalidAutonomousSelectionException(broadcasts);
+            var random = new Random().Next(weightedBroadcasts.Sum(w => w.Weight));
+            var selection = weightedBroadcasts.FirstOrDefault(w => random < w.Weight);
+            
+            return selection?.Broadcast ?? throw new InvalidAutonomousSelectionException(broadcasts);
         }
 
         private List<WeightedBroadcast> GetWeightedBroadcasts(ICollection<IBroadcast> broadcasts)
