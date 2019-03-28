@@ -8,8 +8,8 @@ namespace EnvueStreamSelection.Tests
 {
     public class EpsilonComputerTests
     {
-        private const double Delta = 0.01;
-
+        private readonly double Delta = 0.01D;
+        
         [Test]
         public void TestNoImpressions()
         {
