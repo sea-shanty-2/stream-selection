@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System.ComponentModel;
+using EnvueStreamSelection.Broadcast.Rating;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Broadcast
 {
     public interface IBroadcast
     {

@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EnvueStreamSelection.Broadcast;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Selector.EpsilonGreedy
 {
     /* Epsilon selector with exponential decay */
     public class ExponentialEpsilonComputer : IEpsilonComputer

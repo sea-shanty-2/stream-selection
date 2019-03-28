@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using EnvueStreamSelection.Broadcast;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Selector
 {
     public interface IBroadcastSelector
     {

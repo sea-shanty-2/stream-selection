@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using EnvueStreamSelection.Broadcast;
+using EnvueStreamSelection.Exception;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Selector.EpsilonGreedy
 {
     public class BestBroadcastSelector : IBroadcastSelector
     {

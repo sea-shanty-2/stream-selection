@@ -1,8 +1,8 @@
 using System;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Exception
 {
-    public class NoBroadcastsException : Exception
+    public class NoBroadcastsException : System.Exception
     {
     }
 }

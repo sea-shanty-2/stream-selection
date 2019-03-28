@@ -1,4 +1,4 @@
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Broadcast.Rating
 {
     public interface IBroadcastRating
     {

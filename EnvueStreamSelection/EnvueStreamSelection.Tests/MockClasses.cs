@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using EnvueStreamSelection;
+using EnvueStreamSelection.Broadcast;
+using EnvueStreamSelection.Broadcast.Rating;
 
 namespace EnvueStreamSelection.Tests
 {
@@ -16,7 +17,7 @@ namespace EnvueStreamSelection.Tests
             Ratings = Enumerable.Range(0, numberOfRatings).Select(_ => new MockRating()).ToList<IBroadcastRating>();
         }
 
-        public MockBroadcast(params IBroadcastRating[] ratings)
+        public MockBroadcast(params MockRating[] ratings)
         {
             Ratings = ratings;
         }

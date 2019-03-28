@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Broadcast
 {
     public static class BroadcastExtensions
     {

@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using EnvueStreamSelection.Broadcast;
 
-namespace EnvueStreamSelection
+namespace EnvueStreamSelection.Selector.EpsilonGreedy
 {
     public class EpsilonGreedySelector : IBroadcastSelector
     {
