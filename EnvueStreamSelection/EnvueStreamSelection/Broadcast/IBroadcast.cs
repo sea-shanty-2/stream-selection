@@ -7,7 +7,7 @@ namespace EnvueStreamSelection.Broadcast
     {
         string Identifier { get; }
         int Bitrate { get; }
-        float Shakiness { get; }
+        float Stability { get; }
         ICollection<IBroadcastRating> Ratings { get;  }
     }
 }

@@ -9,7 +9,7 @@ namespace EnvueStreamSelection.Tests
     {
         public string Identifier { get; set; }
         public int Bitrate { get; set; }
-        public float Shakiness { get; set; }
+        public float Stability { get; set; }
         public ICollection<IBroadcastRating> Ratings { get; set; }
 
         public MockBroadcast(int numberOfRatings)
