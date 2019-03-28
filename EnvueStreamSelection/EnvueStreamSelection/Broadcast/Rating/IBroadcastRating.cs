@@ -2,7 +2,7 @@ namespace EnvueStreamSelection
 {
     public interface IBroadcastRating
     {
-        int GetWeight();
-        RatingPolarity GetPolarity();
+        int Weight { get; }
+        RatingPolarity Polarity { get; }
     }
 }

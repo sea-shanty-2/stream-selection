@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace EnvueStreamSelection
 {
     public interface IBroadcast
     {
-        string GetIdentifier();
-        ICollection<IBroadcastRating> GetRatings();
+        string Identifier { get; }
+        int Bitrate { get; }
+        float Shakiness { get; }
+        ICollection<IBroadcastRating> Ratings { get;  }
     }
 }

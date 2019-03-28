@@ -6,46 +6,42 @@ namespace EnvueStreamSelection.Tests
 {
     internal class MockBroadcast : IBroadcast
     {
-        private readonly ICollection<IBroadcastRating> _ratings;
+        public string Identifier { get; set; }
+        public int Bitrate { get; set; }
+        public float Shakiness { get; set; }
+        public ICollection<IBroadcastRating> Ratings { get; set; }
 
         public MockBroadcast(int numberOfRatings)
         {
-            _ratings = Enumerable.Range(0, numberOfRatings).Select(_ => new MockRating()).ToList<IBroadcastRating>();
+            Ratings = Enumerable.Range(0, numberOfRatings).Select(_ => new MockRating()).ToList<IBroadcastRating>();
         }
 
         public MockBroadcast(params IBroadcastRating[] ratings)
         {
-            _ratings = ratings;
+            Ratings = ratings;
         }
-        
-        public string GetIdentifier() => throw new System.NotImplementedException();
-
-        public ICollection<IBroadcastRating> GetRatings() => _ratings;
     }
 
     internal class MockRating : IBroadcastRating
     {
-        private readonly RatingPolarity _polarity;
-        private readonly int _weight;
-        
+       
         public MockRating()
         {
-            _polarity = RatingPolarity.Negative;
+            Polarity = RatingPolarity.Negative;
         }
 
         public MockRating(RatingPolarity polarity)
         {
-            _polarity = polarity;
+            Polarity = polarity;
         }
 
         public MockRating(RatingPolarity polarity, int weight)
         {
-            _polarity = polarity;
-            _weight = weight;
+            Polarity = polarity;
+            Weight = weight;
         }
 
-        public int GetWeight() => _weight;
-
-        public RatingPolarity GetPolarity() => _polarity;
+        public int Weight { get; }
+        public RatingPolarity Polarity { get; }
     }
 }

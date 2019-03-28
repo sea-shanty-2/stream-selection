@@ -6,7 +6,7 @@ namespace EnvueStreamSelection
     public static class BroadcastExtensions
     {
         public static IDictionary<RatingPolarity, int> GetWeightedPolarities(this IBroadcast broadcasts) => broadcasts
-            .GetRatings().GroupBy(r => r.GetPolarity()).ToDictionary(g => g.Key, g => g.Sum(r => r.GetWeight()));
+            .Ratings.GroupBy(r => r.Polarity).ToDictionary(g => g.Key, g => g.Sum(r => r.Weight));
         
         public static double GetScore(this IBroadcast broadcast)
         {

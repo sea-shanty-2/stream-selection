@@ -18,7 +18,7 @@ namespace EnvueStreamSelection
         
         public float ComputeFrom(ICollection<IBroadcast> broadcasts)
         {
-            var numberOfImpressions = broadcasts.Sum(b => b.GetRatings().Count());
+            var numberOfImpressions = broadcasts.Sum(b => b.Ratings.Count);
 
             return (float) Math.Min(1, Math.Pow(1 - _decayFactor, numberOfImpressions) + _baseEpsilon);
         }
