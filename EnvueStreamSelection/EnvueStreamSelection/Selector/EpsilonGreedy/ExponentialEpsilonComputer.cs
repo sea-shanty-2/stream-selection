@@ -19,7 +19,7 @@ namespace EnvueStreamSelection.Selector.EpsilonGreedy
         
         public float ComputeFrom(ICollection<IBroadcast> broadcasts)
         {
-            var numberOfImpressions = broadcasts.Sum(b => b.Ratings.Count);
+            var numberOfImpressions = broadcasts.Sum(b => b.Ratings.Sum(r => r.Weight));
 
             return (float) Math.Min(1, Math.Pow(1 - DecayFactor, numberOfImpressions) + BaseEpsilon);
         }

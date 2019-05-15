@@ -42,7 +42,7 @@ namespace EnvueStreamSelection.Tests
             Weight = weight;
         }
 
-        public int Weight { get; }
+        public int Weight { get; } = 1;
         public RatingPolarity Polarity { get; }
     }
 }
